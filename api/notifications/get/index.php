@@ -17,4 +17,4 @@ $url = "https://api.mercadopago.com/merchant_orders/search";
 
 // Sustituye el método por su correspondiente: get, put, post, delete
 
-curl_call("get", "$url" . $collector_id . "?access_token=" . $access_token, $notificationJSON);
+curl_call("get", "$url?access_token=" . $access_token, $notificationJSON);
