@@ -23,7 +23,7 @@ function curl_call($method, $url, $json)
 {
     $integrator_id_test = "";
     $method = strtoupper($method);
-    $headers = array("Content-Type: application/json", "X-integrator-id: $integrator_id_test");
+    $headers = array("Content-Type: application/json", "X-integrator-id: $integrator_id_test", "Access-Control-Allow-Origin: *");
     $ch = curl_init();
     if ($method == "POST") {$post = 1;} else { $post = 0;}
     ;
