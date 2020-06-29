@@ -23,7 +23,11 @@ function curl_call($method, $url, $json)
 {
     $integrator_id_test = "";
     $method = strtoupper($method);
-    $headers = array("Content-Type: application/json", "X-integrator-id: $integrator_id_test", "Access-Control-Allow-Origin: https://api.mercadolibre.com");
+    $headers = array("Content-Type: application/json", "X-integrator-id: $integrator_id_test", "Access-Control-Allow-Origin: https://api.mercadolibre.com",
+        "Access-Control-Allow-Origin: https://api.mercadolibre.com/countries/AR",
+        "Access-Control-Allow-Origin: https://api.mercadolibre.com/countries/AR",
+        "Access-Control-Allow-Origin: https://api.mercadolibre.com/states/AR-C",
+    );
     $ch = curl_init();
     if ($method == "POST") {$post = 1;} else { $post = 0;}
     ;
