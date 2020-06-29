@@ -70,13 +70,13 @@ $(document).ready(function () {
 
 						$('#qr').html("<img with='350px' height='350px' src='" + data.results[0].qr.image + "'>");
 
-						// REVISA AQUÍ:
+						// REVISA AQUÍ (DONE):
 						// Agrega la URL notification_url 
 						// para recibir las notificaciones en tu endpoint público.
 
 						var orderJSON = {
 							"external_reference": external_reference,
-							"notification_url": "",
+							"notification_url": "https://en3ch04qd1ogq.x.pipedream.net/",
 							"items": items
 						};
 
@@ -323,10 +323,40 @@ $(document).ready(function () {
 		var externalStoreID = $('#externalStoreID').val();
 
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ (DONE):
 		// Modifica el storeJSON con la estructura necesaria para crear una Store correctamente.
 
-		var storeJSON = {}
+		var storeJSON = {
+			"name": storeName,
+			"business_hours": {
+				"monday": [
+					{
+						"open": "08:00",
+						"close": "13:00"
+					},
+					{
+						"open": "15:00",
+						"close": "18:00"
+					}
+				],
+				"tuesday": [
+					{
+						"open": "08:00",
+						"close": "18:00"
+					}
+				]
+			},
+			"location": {
+				"street_number": streetNumber,
+				"street_name": streetName,
+				"city_name": city,
+				"state_name": state,
+				"latitude": latitude,
+				"longitude": longitude,
+				"reference": addressReference
+			},
+			"external_id": externalStoreID
+		};
 
 		console.log(storeJSON);
 		$.post("api/store/create/", { json: JSON.stringify(storeJSON) }, function (results) {
@@ -346,20 +376,20 @@ $(document).ready(function () {
 		var externalStoreID = $('#externalStoreIDPOS').val();
 		var externalPOSID = $('#externalPOSID').val();
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ (DONE):
 
-		var category = 1;   // Agrega aquí el número de categoría o MCC necesario para 
+		var category = 621102;   // Agrega aquí el número de categoría o MCC necesario para 
 		// Identificar al POS de restaurante
 
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ (DONE):
 		// Comprueba que el posJSON sea el adecuado para crear un POS integrado correctamente.
 
 		var posJSON = {
 			"name": posName,
 			"external_store_id": externalStoreID,
-			"fixed_amount": false,
-			"category_id": category,
+			"fixed_amount": true,
+			"category": category,
 			"external_id": externalPOSID
 		};
 

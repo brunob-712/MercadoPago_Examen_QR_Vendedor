@@ -62,7 +62,7 @@ Para que todo ello funcione deberás comprobar de realizar los cambios o los añ
 
 Dentro del código encontrarás comentado mediante el siguiente texto las acciones que deberás revisar:
 
-// REVISA AQUÍ: 
+// REVISA AQUÍ (DONE): 
 
 Esto principalmente será en los archivos:
 
@@ -112,8 +112,8 @@ POS/QR:
 ORDEN:
    - store_id: Es el ID resultante de crear la sucursal, o también llamado STORE_ID (no es el external_id de la sucursal)
    - external_pos_id: Es el external_id creado en el POS
-   - external_reference: El external_reference deberá ser: ref + tu número de DNI sin puntos ni rayas + número correlatvo por cada prueba 001, por ejemplo: ref218545556001. Muy importante a tener en cuenta, cada vez que hagas un flujo completo en el ejercicio aumenta el número correlativo de la external_reference. Seería al equivalente al número de orden de una compra.
-   - notification_url: Este campo debe tener una url correcta. El servicio de recepción de notificacinones deberá ser accesible públicamente por inernet.
+   - external_reference: El external_reference deberá ser: ref + tu número de DNI sin puntos ni rayas + número correlatvo por cada prueba 001, por ejemplo: ref218545556001. Muy importante a tener en cuenta, cada vez que hagas un flujo completo en el ejercicio aumenta el número correlativo de la external_reference. Sería al equivalente al número de orden de una compra.
+   - notification_url: Este campo debe tener una url correcta. El servicio de recepción de notificaciones deberá ser accesible públicamente por internet.
    - El monto total de la orden debe coincidir con $ 660.
 
 
