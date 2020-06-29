@@ -268,41 +268,47 @@ $(document).ready(function () {
 	///////////////////////////////////////////////////////////////////////////
 	// Estas funciones muestran los selectores de país, región, comuna, barrio, ciudad
 	///////////////////////////////////////////////////////////////////////////
+
+	// Nota: valores hardcodeados por conflictos de CORS al hacer deploy de la app en Heroku (aparentemente relacionado con el uso del plan gratuito)
+
 	function fillCountrySelector() {
 
-		$.get("https://api.mercadolibre.com/countries", function (countries) {
-			$('#country').html("<option>Selecciona el país...</option>");
+		// $.get("https://api.mercadolibre.com/countries", function (countries) {
+		$('#country').html("<option>Selecciona el país...</option>");
 
-			for (country in countries) {
-				$('#country').append("<option value='" + countries[country].id + "'>" + countries[country].name + "</option>");
-			}
-		});
+		// for (country in countries) {
+		// $('#country').append("<option value='" + countries[country].id + "'>" + countries[country].name + "</option>");
+		$('#country').append("<option value='AR'>" + "Argentina" + "</option>");
+		// }
+		// });
 
 	}; // 
 
 	$("#country").change(function () {
 		var selectedCountry = $("#country option:selected").val();
-		$.get("https://api.mercadolibre.com/countries/" + selectedCountry, function (regions) {
-			regions = regions.states;
-			$('#states').html("<option>Selecciona la región...</option>");
+		// $.get("https://api.mercadolibre.com/countries/" + selectedCountry, function (regions) {
+		// regions = regions.states;
+		$('#states').html("<option>Selecciona la región...</option>");
 
-			for (region in regions) {
-				$('#states').append("<option value='" + regions[region].id + "'>" + regions[region].name + "</option>");
-			}
-		});
+		// for (region in regions) {
+		// $('#states').append("<option value='" + regions[region].id + "'>" + regions[region].name + "</option>");
+		$('#states').append("<option value='AR-C'>" + "Capital Federal" + "</option>");
+		// }
+		// });
 	});
 
 	$("#states").change(function () {
 		var selectedState = $("#states option:selected").val();
 
-		$.get("https://api.mercadolibre.com/states/" + selectedState, {}, function (cities) {
-			cities = cities.cities;
-			$('#cities').html("<option>Selecciona la ciudad o comuna...</option>");
+		// $.get("https://api.mercadolibre.com/states/" + selectedState, {}, function (cities) {
+		// cities = cities.cities;
+		$('#cities').html("<option>Selecciona la ciudad o comuna...</option>");
 
-			for (city in cities) {
-				$('#cities').append("<option value='" + cities[city].id + "'>" + cities[city].name + "</option>");
-			}
-		});
+		// for (city in cities) {
+		// $('#cities').append("<option value='" + cities[city].id + "'>" + cities[city].name + "</option>");
+		$('#cities').append("<option value='TUxBQlBBTDI1MTVa'>" + "Palermo" + "</option>");
+		// }
+		// });
 	});
 	///////////////////////////////////////////////////////////////////////////
 
