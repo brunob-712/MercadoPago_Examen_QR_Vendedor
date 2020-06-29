@@ -9,10 +9,14 @@ global $access_token, $collector_id, $notificationJSON;
 // Para ver el estado del pago.
 
 $lastResource = file_get_contents('../notifications.txt');
+if ($lastResource === false) {
+    echo "{}";
+    return;
+}
 
-$url = "$lastResource?access_token=$access_token";
+$url = $lastResource . "?access_token=" . $access_token;
 
-// REVISAR AQUÍ:
+// REVISAR AQUÍ (DONE):
 // Agrega la $url necesaria para revisar el estado del pago en base al recurso recibido de la notificación
 
 // Sustituye el método por su correspondiente: get, put, post, delete

@@ -76,7 +76,8 @@ $(document).ready(function () {
 
 						var orderJSON = {
 							"external_reference": external_reference,
-							"notification_url": "https://en3ch04qd1ogq.x.pipedream.net/",
+							// "notification_url": "https://en3ch04qd1ogq.x.pipedream.net/",
+							"notification_url": "http://brunob712-mp-qr-vendedor.herokuapp.com/api/notifications/index.php",
 							"items": items
 						};
 
